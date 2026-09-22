@@ -1,0 +1,30 @@
+{
+    "classes": [
+        {
+            "title": "fully-ripe",
+            "shape": "rectangle",
+            "color": "#D0021B",
+            "geometry_config": {},
+            "id": 20699,
+            "hotkey": ""
+        },
+        {
+            "title": "semi-ripe",
+            "shape": "rectangle",
+            "color": "#F8E71C",
+            "geometry_config": {},
+            "id": 20698,
+            "hotkey": ""
+        },
+        {
+            "title": "unripe",
+            "shape": "rectangle",
+            "color": "#7ED321",
+            "geometry_config": {},
+            "id": 20697,
+            "hotkey": ""
+        }
+    ],
+    "tags": [],
+    "projectType": "images"
+}

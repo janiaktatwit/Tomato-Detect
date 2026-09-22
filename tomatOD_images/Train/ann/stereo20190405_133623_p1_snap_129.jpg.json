@@ -1,0 +1,34 @@
+{
+    "description": "",
+    "tags": [],
+    "size": {
+        "height": 2000,
+        "width": 2000
+    },
+    "objects": [
+        {
+            "id": 14407311,
+            "classId": 20697,
+            "description": "",
+            "geometryType": "rectangle",
+            "labelerLogin": "gr@datasetninja.com",
+            "createdAt": "2023-07-10T16:24:30.613Z",
+            "updatedAt": "2023-07-10T16:24:30.613Z",
+            "tags": [],
+            "classTitle": "unripe",
+            "points": {
+                "exterior": [
+                    [
+                        731,
+                        774
+                    ],
+                    [
+                        819,
+                        862
+                    ]
+                ],
+                "interior": []
+            }
+        }
+    ]
+}

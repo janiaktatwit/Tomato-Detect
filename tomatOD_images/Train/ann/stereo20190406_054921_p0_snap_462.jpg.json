@@ -1,0 +1,394 @@
+{
+    "description": "",
+    "tags": [],
+    "size": {
+        "height": 2000,
+        "width": 2000
+    },
+    "objects": [
+        {
+            "id": 14407273,
+            "classId": 20698,
+            "description": "",
+            "geometryType": "rectangle",
+            "labelerLogin": "gr@datasetninja.com",
+            "createdAt": "2023-07-10T16:24:30.607Z",
+            "updatedAt": "2023-07-10T16:24:30.607Z",
+            "tags": [],
+            "classTitle": "semi-ripe",
+            "points": {
+                "exterior": [
+                    [
+                        647,
+                        557
+                    ],
+                    [
+                        789,
+                        699
+                    ]
+                ],
+                "interior": []
+            }
+        },
+        {
+            "id": 14407272,
+            "classId": 20697,
+            "description": "",
+            "geometryType": "rectangle",
+            "labelerLogin": "gr@datasetninja.com",
+            "createdAt": "2023-07-10T16:24:30.606Z",
+            "updatedAt": "2023-07-10T16:24:30.606Z",
+            "tags": [],
+            "classTitle": "unripe",
+            "points": {
+                "exterior": [
+                    [
+                        1081,
+                        507
+                    ],
+                    [
+                        1157,
+                        583
+                    ]
+                ],
+                "interior": []
+            }
+        },
+        {
+            "id": 14407271,
+            "classId": 20697,
+            "description": "",
+            "geometryType": "rectangle",
+            "labelerLogin": "gr@datasetninja.com",
+            "createdAt": "2023-07-10T16:24:30.605Z",
+            "updatedAt": "2023-07-10T16:24:30.605Z",
+            "tags": [],
+            "classTitle": "unripe",
+            "points": {
+                "exterior": [
+                    [
+                        1149,
+                        524
+                    ],
+                    [
+                        1241,
+                        616
+                    ]
+                ],
+                "interior": []
+            }
+        },
+        {
+            "id": 14407270,
+            "classId": 20697,
+            "description": "",
+            "geometryType": "rectangle",
+            "labelerLogin": "gr@datasetninja.com",
+            "createdAt": "2023-07-10T16:24:30.604Z",
+            "updatedAt": "2023-07-10T16:24:30.604Z",
+            "tags": [],
+            "classTitle": "unripe",
+            "points": {
+                "exterior": [
+                    [
+                        1653,
+                        327
+                    ],
+                    [
+                        1745,
+                        419
+                    ]
+                ],
+                "interior": []
+            }
+        },
+        {
+            "id": 14407269,
+            "classId": 20697,
+            "description": "",
+            "geometryType": "rectangle",
+            "labelerLogin": "gr@datasetninja.com",
+            "createdAt": "2023-07-10T16:24:30.603Z",
+            "updatedAt": "2023-07-10T16:24:30.603Z",
+            "tags": [],
+            "classTitle": "unripe",
+            "points": {
+                "exterior": [
+                    [
+                        81,
+                        429
+                    ],
+                    [
+                        241,
+                        589
+                    ]
+                ],
+                "interior": []
+            }
+        },
+        {
+            "id": 14407268,
+            "classId": 20697,
+            "description": "",
+            "geometryType": "rectangle",
+            "labelerLogin": "gr@datasetninja.com",
+            "createdAt": "2023-07-10T16:24:30.602Z",
+            "updatedAt": "2023-07-10T16:24:30.602Z",
+            "tags": [],
+            "classTitle": "unripe",
+            "points": {
+                "exterior": [
+                    [
+                        1314,
+                        1457
+                    ],
+                    [
+                        1440,
+                        1583
+                    ]
+                ],
+                "interior": []
+            }
+        },
+        {
+            "id": 14407267,
+            "classId": 20697,
+            "description": "",
+            "geometryType": "rectangle",
+            "labelerLogin": "gr@datasetninja.com",
+            "createdAt": "2023-07-10T16:24:30.601Z",
+            "updatedAt": "2023-07-10T16:24:30.601Z",
+            "tags": [],
+            "classTitle": "unripe",
+            "points": {
+                "exterior": [
+                    [
+                        1062,
+                        1296
+                    ],
+                    [
+                        1138,
+                        1372
+                    ]
+                ],
+                "interior": []
+            }
+        },
+        {
+            "id": 14407266,
+            "classId": 20699,
+            "description": "",
+            "geometryType": "rectangle",
+            "labelerLogin": "gr@datasetninja.com",
+            "createdAt": "2023-07-10T16:24:30.601Z",
+            "updatedAt": "2023-07-10T16:24:30.601Z",
+            "tags": [],
+            "classTitle": "fully-ripe",
+            "points": {
+                "exterior": [
+                    [
+                        1012,
+                        1251
+                    ],
+                    [
+                        1088,
+                        1327
+                    ]
+                ],
+                "interior": []
+            }
+        },
+        {
+            "id": 14407265,
+            "classId": 20697,
+            "description": "",
+            "geometryType": "rectangle",
+            "labelerLogin": "gr@datasetninja.com",
+            "createdAt": "2023-07-10T16:24:30.599Z",
+            "updatedAt": "2023-07-10T16:24:30.599Z",
+            "tags": [],
+            "classTitle": "unripe",
+            "points": {
+                "exterior": [
+                    [
+                        1240,
+                        991
+                    ],
+                    [
+                        1350,
+                        1101
+                    ]
+                ],
+                "interior": []
+            }
+        },
+        {
+            "id": 14407264,
+            "classId": 20697,
+            "description": "",
+            "geometryType": "rectangle",
+            "labelerLogin": "gr@datasetninja.com",
+            "createdAt": "2023-07-10T16:24:30.598Z",
+            "updatedAt": "2023-07-10T16:24:30.598Z",
+            "tags": [],
+            "classTitle": "unripe",
+            "points": {
+                "exterior": [
+                    [
+                        1069,
+                        883
+                    ],
+                    [
+                        1145,
+                        959
+                    ]
+                ],
+                "interior": []
+            }
+        },
+        {
+            "id": 14407263,
+            "classId": 20699,
+            "description": "",
+            "geometryType": "rectangle",
+            "labelerLogin": "gr@datasetninja.com",
+            "createdAt": "2023-07-10T16:24:30.597Z",
+            "updatedAt": "2023-07-10T16:24:30.597Z",
+            "tags": [],
+            "classTitle": "fully-ripe",
+            "points": {
+                "exterior": [
+                    [
+                        1144,
+                        865
+                    ],
+                    [
+                        1220,
+                        941
+                    ]
+                ],
+                "interior": []
+            }
+        },
+        {
+            "id": 14407262,
+            "classId": 20698,
+            "description": "",
+            "geometryType": "rectangle",
+            "labelerLogin": "gr@datasetninja.com",
+            "createdAt": "2023-07-10T16:24:30.596Z",
+            "updatedAt": "2023-07-10T16:24:30.596Z",
+            "tags": [],
+            "classTitle": "semi-ripe",
+            "points": {
+                "exterior": [
+                    [
+                        678,
+                        1205
+                    ],
+                    [
+                        854,
+                        1381
+                    ]
+                ],
+                "interior": []
+            }
+        },
+        {
+            "id": 14407261,
+            "classId": 20698,
+            "description": "",
+            "geometryType": "rectangle",
+            "labelerLogin": "gr@datasetninja.com",
+            "createdAt": "2023-07-10T16:24:30.594Z",
+            "updatedAt": "2023-07-10T16:24:30.594Z",
+            "tags": [],
+            "classTitle": "semi-ripe",
+            "points": {
+                "exterior": [
+                    [
+                        529,
+                        544
+                    ],
+                    [
+                        647,
+                        662
+                    ]
+                ],
+                "interior": []
+            }
+        },
+        {
+            "id": 14407260,
+            "classId": 20698,
+            "description": "",
+            "geometryType": "rectangle",
+            "labelerLogin": "gr@datasetninja.com",
+            "createdAt": "2023-07-10T16:24:30.593Z",
+            "updatedAt": "2023-07-10T16:24:30.593Z",
+            "tags": [],
+            "classTitle": "semi-ripe",
+            "points": {
+                "exterior": [
+                    [
+                        550,
+                        757
+                    ],
+                    [
+                        650,
+                        857
+                    ]
+                ],
+                "interior": []
+            }
+        },
+        {
+            "id": 14407259,
+            "classId": 20697,
+            "description": "",
+            "geometryType": "rectangle",
+            "labelerLogin": "gr@datasetninja.com",
+            "createdAt": "2023-07-10T16:24:30.592Z",
+            "updatedAt": "2023-07-10T16:24:30.592Z",
+            "tags": [],
+            "classTitle": "unripe",
+            "points": {
+                "exterior": [
+                    [
+                        822,
+                        1456
+                    ],
+                    [
+                        904,
+                        1538
+                    ]
+                ],
+                "interior": []
+            }
+        },
+        {
+            "id": 14407258,
+            "classId": 20697,
+            "description": "",
+            "geometryType": "rectangle",
+            "labelerLogin": "gr@datasetninja.com",
+            "createdAt": "2023-07-10T16:24:30.591Z",
+            "updatedAt": "2023-07-10T16:24:30.591Z",
+            "tags": [],
+            "classTitle": "unripe",
+            "points": {
+                "exterior": [
+                    [
+                        1234,
+                        1441
+                    ],
+                    [
+                        1334,
+                        1541
+                    ]
+                ],
+                "interior": []
+            }
+        }
+    ]
+}
