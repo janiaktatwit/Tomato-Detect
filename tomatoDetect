@@ -1,25 +1,113 @@
 import cv2
+import numpy as np
+import os
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
 
-capture = cv2.VideoCapture(0)
+#scikit-learn logistic regression (classification) model 
 
-if capture.isOpened() == False: 
-    print("camera not opened")
-    exit()
+def extract_image_features(imagePath):  #used with image files
+    #extract ratio of red and circularity
+    img = cv2.imread(imagePath)
+    if img is None:
+        return None
 
-counter = 0
-
-while True:
     
-    ret, frame = capture.read()
-    if ret == False:
-        print("could not return frame")
-        break
+    img = cv2.resize(img,(64,64))
+    hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+    #red box
+    box_red = cv2.inRange(hsv, (0,100,100), (10,255,255))
+    red_ratio = np.sum(box_red) / (64 * 64)
 
-    cv2.imshow("test", frame)
-    counter += 1
-    print(counter)
-    
-    if cv2.waitKey(1) & 0xFF == ord('q'): #press q to quit capture test
-        break
-capture.release()
-cv2.destroyAllWindows()
+    # might need to find circular?
+
+    #
+
+    return [red_ratio]
+
+def extract_frame_features(frame): #for LIVE camera input
+    img = cv2.resize(frame, (64,64))
+    hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+
+    box_red = cv2.inRange(hsv, (0,100,100),(10,255,255))
+    red_ratio = np.sum(box_red) / (64 * 64)
+
+    # might need circularity again?
+
+    #
+
+    return [red_ratio]
+
+def load_dataset(base_folder="dataset"):
+    X = []
+    y =[]
+
+    for folder, label in [("positives", 1), ("negatives", 0)]:
+        full_path = os.path.join(base_folder, folder)
+        for file in os.listdir(full_path):
+            path = os.path.join(full_path, file)
+            features = extract_image_features(path)
+            if features is not None:
+                X.append(features)
+                y.append(label)
+
+    return np.array(X), np.array(y)
+
+def train_model():
+    X, y = load_dataset()
+
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25,random_state=42)
+
+    model = LogisticRegression()
+    model.fit(X_train, y_train)
+
+    y_pred = model.predict(X_test)
+    accuracy = accuracy_score(y_test, y_pred)
+
+    print("Accuracy:", accuracy)
+    return model
+
+def run_camera(model):
+    cap = cv2.VideoCapture(0)
+
+    if not cap.isOpened():
+        print("Error opening camera")
+        return
+
+    while True:
+        ret, frame = cap.read()
+        if not ret:
+            print("Could not return frame")
+            break
+
+        features = extract_frame_features(frame)
+        prediction = model.predict([features])[0]
+        #bounding box start
+        hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+        mask_red = cv2.inRange(hsv, (0,100,100), (10,255,255))
+        contours, _ = cv2.findContours(mask_red, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+        for c in contours:
+            area = cv2.contourArea(c)
+            if area > 500:
+                x, y, w, h = cv2.boundingRect(c)
+                cv2.rectangle(frame, (x, y), (x+w, y+h), (0,255,0), 2)
+        #bounding box end
+
+        label = "TOMATO DETECTED" if prediction == 1 else "NO TOMATO"
+        cv2.putText(frame, label, (20, 40), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
+
+        cv2.imshow("Tomato ML Recognition", frame)
+
+        if cv2.waitKey(1) & 0xFF == ord('q'): #q to quit
+            break
+
+    cap.release()
+    cv2.destroyAllWindows()
+
+
+
+
+if __name__ == "__main__":
+    model = train_model()
+    run_camera(model)
