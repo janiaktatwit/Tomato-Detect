@@ -109,8 +109,6 @@ def run_camera(model):
     cv2.destroyAllWindows()
 
 
-
-
 if __name__ == "__main__":
     model = train_model()
     run_camera(model)
