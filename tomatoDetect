@@ -12,32 +12,63 @@ def extract_image_features(imagePath):  #used with image files
     img = cv2.imread(imagePath)
     if img is None:
         return None
-
+    area = 0
+    aspectRatio =0
+    circularity = 0
     
-    img = cv2.resize(img,(64,64))
+    img = cv2.resize(img,(128,128))
+    #red ratio feature
     hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
     #red box
     box_red = cv2.inRange(hsv, (0,100,100), (10,255,255))
-    red_ratio = np.sum(box_red) / (64 * 64)
+    red_ratio = np.sum(box_red) / (128 * 128)
+    # end red ratio feature
+    # start circularity feature
+    contours, _ = cv2.findContours(box_red, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
-    # might need to find circular?
+    circularity = 0
+    if contours:
+        c = max(contours, key=cv2.contourArea) 
+        area = cv2.contourArea(c)
+        perimeter = cv2.arcLength(c, True)
+        if perimeter > 0:
+            circularity = 4 * np.pi * area / (perimeter ** 2)
+        # end circularity feature
+        # start aspect ratio
+        x, y, w, h = cv2.boundingRect(c)
+        aspectRatio = w/h
+        # end aspect ratio
+        # maybe add matte vs glossy feature?
 
-    #
-
-    return [red_ratio]
+    return [red_ratio, circularity, aspectRatio, area]
 
 def extract_frame_features(frame): #for LIVE camera input
-    img = cv2.resize(frame, (64,64))
+    img = cv2.resize(frame, (128,128))
+    # start red ratio 
     hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
-
     box_red = cv2.inRange(hsv, (0,100,100),(10,255,255))
-    red_ratio = np.sum(box_red) / (64 * 64)
-
-    # might need circularity again?
-
-    #
-
-    return [red_ratio]
+    red_ratio = np.sum(box_red) / (128 * 128)
+    # end red ratio feature
+    # start circularity feature
+    contours, _ = cv2.findContours(box_red, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    area = 0
+    aspectRatio =0
+    circularity = 0
+    if contours:
+        c = max(contours, key=cv2.contourArea)
+        area = cv2.contourArea(c)
+        perimeter = cv2.arcLength(c, True)
+        if perimeter > 0:
+            circularity = 4 * np.pi * area / (perimeter ** 2)
+        # end circularity feature
+        # start aspect ratio
+        x, y, w, h = cv2.boundingRect(c)
+        print(cv2.boundingRect(c)) ##..?
+        aspectRatio = w/h
+        # end aspect ratio
+        # maybe add matte vs glossy feature?
+   
+    return [red_ratio, circularity, aspectRatio, area]
 
 def load_dataset(base_folder="dataset"):
     X = []
@@ -97,7 +128,7 @@ def run_camera(model):
                 cv2.rectangle(frame, (x, y), (x+w, y+h), (0,255,0), 2)
         #bounding box end
 
-        label = "TOMATO DETECTED" if prediction == 1 else "NO TOMATO"
+        label = str(len(boxes)) + " TOMATO DETECTED" if prediction == 1 else "NO TOMATO"
         cv2.putText(frame, label, (20, 40), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
 
         cv2.imshow("Tomato ML Recognition", frame)
